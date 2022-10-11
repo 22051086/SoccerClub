@@ -7,7 +7,7 @@ pipeline {
         stage("clone the git") {
             steps {
                 echo "Cloning the git"
-                git branch: 'master', url: 'https://github.com/KeyonGenesis/jenkins-maven-sonarqube'
+                git branch: 'master', url: 'https://github.com/22051086/SoccerClub'
                 echo "Git cloned"
             }
         }
@@ -16,7 +16,7 @@ pipeline {
             steps{
                 
                 script {
-                    
+                    cd SoccerClub
                     bat 'mvn --version'
                     println "Maven building"
                     bat 'mvn clean package'
