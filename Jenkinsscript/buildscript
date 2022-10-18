@@ -16,7 +16,6 @@ pipeline {
             steps{
                 
                 script {
-                    cd SoccerClub
                     bat 'mvn --version'
                     println "Maven building"
                     bat 'mvn clean package'
