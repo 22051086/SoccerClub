@@ -5,8 +5,9 @@ pipeline {
         
         stage("clone the git") {
             steps {
+                echo "${Branch_Name}"
                 echo "Cloning the git"
-                git branch: 'master', url: 'https://github.com/22051086/SoccerClub'
+                git branch: "${Branch_Name}", url: 'https://github.com/22051086/SoccerClub'
                 echo "Git cloned"
             }
         }
@@ -34,17 +35,7 @@ pipeline {
                 }
             }
         }
-        
-         stage("Quality gate") {
-            
-            steps {
-                
-                script {
-                    println "skipping quality gate"
-                        
-                    }
-            }
-        }
+
        
     }
 }
