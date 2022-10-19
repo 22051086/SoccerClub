@@ -29,7 +29,7 @@ pipeline {
             //def scannerHome = tool 'sonarqube-4.7';
             
             steps {
-                withSonarQubeEnv('sonarqube-server') { 
+                withSonarQubeEnv('sonar') { 
                     bat "mvn sonar:sonar"
                 }
             }
